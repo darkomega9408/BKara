@@ -1,0 +1,1 @@
++ The application is only for 5.0 or above Android devices.
