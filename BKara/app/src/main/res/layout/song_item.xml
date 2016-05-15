@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="song"
+            type="com.beast.bkara.model.Song" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:hedgehog="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_height="150dp"
+        android:layout_width="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <android.support.percent.PercentRelativeLayout
+                android:layout_weight="3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <ImageView
+                    android:id="@+id/song_item_poster"
+                    app:setPoster="@{song.poster}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_aspectRatio="100%"
+                    app:layout_widthPercent="100%" />
+
+            </android.support.percent.PercentRelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/song_item_title"
+                android:textSize="20dp"
+                android:textColor="?attr/colorPrimary"
+                android:text="@{song.title}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textSize="15dp"
+                android:id="@+id/song_item_artist"
+                android:layout_below="@+id/song_item_title"
+                app:setSinger="@{song.singer}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="15dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:id="@+id/song_item_genre"
+                android:layout_below="@+id/song_item_artist"
+                android:text="Genre"
+                app:setGenre="@{song.genre}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_below="@+id/song_item_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.beast.bkara.util.RatingBarView
+                    android:id="@+id/ratingbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:setRating="@{song.rating}"
+                    hedgehog:starEmpty="@drawable/ic_star_empty"
+                    hedgehog:starFill="@drawable/ic_star_full"
+                    hedgehog:starHalf="@drawable/ic_star_half"
+                    hedgehog:starCount="5"
+                    hedgehog:clickable="false"
+                    hedgehog:starImageSize="25dp" />
+
+                <TextView
+                    android:text="view"
+                    android:textSize="10dp"
+                    android:layout_alignParentRight="true"
+                    app:setView="@{song.view}"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

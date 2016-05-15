@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/save_record_dialog_width"
+    android:layout_height="@dimen/save_record_dialog_height"
+    android:padding="@dimen/fab_padding"
+    tools:context="com.beast.bkara.dialogfragments.SaveRecordDialogFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+        <TextView
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:text="YOUR RECORD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ToggleButton
+            android:layout_centerVertical="true"
+            android:id="@+id/frag_save_record_btnPlay"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/toggle_play"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+        <SeekBar
+            android:layout_toRightOf="@id/frag_save_record_btnPlay"
+            android:layout_centerVertical="true"
+            android:id="@+id/frag_save_record_seekBar"
+            android:progressTint="?attr/colorPrimary"
+            android:thumbTint="?attr/colorPrimary"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/frag_save_record_textview_save"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="?attr/colorAccent"
+            android:text="SAVE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/frag_save_record_textview_discard"
+            android:layout_marginRight="@dimen/fab_margin_big"
+            android:layout_toLeftOf="@id/frag_save_record_textview_save"
+            android:layout_alignParentBottom="true"
+            android:textColor="?attr/colorAccent"
+            android:text="DISCARD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+</RelativeLayout>

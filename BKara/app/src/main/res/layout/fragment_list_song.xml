@@ -1,0 +1,32 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.beast.bkara.fragments.SongListFragment">
+    <data>
+        <variable
+            name="songVm"
+            type="com.beast.bkara.viewmodel.SongViewModel" />
+        <import type="me.tatarka.bindingcollectionadapter.LayoutManagers" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:tag="frag_list_song_progressBarWaiting"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- TODO: Update blank fragment layout -->
+        <android.support.v7.widget.RecyclerView
+            android:tag="frag_list_song_rvSongList"
+            app:layoutManager="@{LayoutManagers.linear()}"
+            app:items="@{songVm.songList}"
+            app:itemView="@{songVm.songView}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+</layout>
+

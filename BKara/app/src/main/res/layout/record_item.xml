@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="record"
+            type="com.beast.bkara.model.Record" />
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:hedgehog="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/record_item_progressbar"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/record_item_ll_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/record_item_textview_username"
+                android:layout_gravity="center_vertical"
+                android:hint="Nguyen Thanh Tam"
+                app:setUsername="@{record.user}"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/record_item_textview_songname"
+                android:layout_gravity="center_vertical"
+                android:hint="Chac ai do se ve"
+                app:setSongname="@{record.song}"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="right"
+                app:setView="@{record.view}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/record_item_ll_datetime"
+            android:layout_below="@id/record_item_ll_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:hint="02/02/2013"
+                app:setDate="@{record.date_created}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <com.beast.bkara.util.RatingBarView
+                android:id="@+id/ratingbar"
+                android:gravity="right|center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setRating="@{record.rating}"
+                hedgehog:starEmpty="@drawable/ic_star_empty"
+                hedgehog:starFill="@drawable/ic_star_full"
+                hedgehog:starHalf="@drawable/ic_star_half"
+                hedgehog:starCount="5"
+                hedgehog:clickable="false"
+                hedgehog:starImageSize="25dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/record_item_ll_media"
+            android:layout_below="@id/record_item_ll_datetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fab_margin">
+
+            <ToggleButton
+                android:id="@+id/record_item_btnPlay"
+                android:textOn=""
+                android:textOff=""
+                android:background="@drawable/toggle_play"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <SeekBar
+                android:id="@+id/record_item_seekBar"
+                android:progressTint="?attr/colorPrimary"
+                android:thumbTint="?attr/colorPrimary"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

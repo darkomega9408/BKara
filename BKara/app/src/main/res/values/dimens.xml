@@ -1,0 +1,21 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="fab_margin">8dp</dimen>
+    <dimen name="fab_padding">8dp</dimen>
+    <dimen name="fab_margin_big">16dp</dimen>
+    <dimen name="fab_padding_big">16dp</dimen>
+
+    <!-- Small box size for square button -->
+    <dimen name="box_sm">50dp</dimen>
+
+    <!-- Save record dialog size -->
+    <dimen name="save_record_dialog_width">350dp</dimen>
+    <dimen name="save_record_dialog_height">150dp</dimen>
+
+    <dimen name="spacing_medium">8dp</dimen>
+</resources>

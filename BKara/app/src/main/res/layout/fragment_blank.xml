@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.beast.bkara.fragments.BlankFragment"
+    android:background="@color/colorPaleWhiteBlue">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/blank_fragment_img_blank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_blank_page"
+        android:adjustViewBounds="true"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Coming soon"
+        android:id="@+id/blank_fragment_tv_blank"
+        android:layout_alignBottom="@+id/blank_fragment_img_blank"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightBlue"/>
+
+</RelativeLayout>

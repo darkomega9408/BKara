@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="genre"
+            type="com.beast.bkara.model.Genre" />
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fab_padding">
+
+        <android.support.percent.PercentFrameLayout
+            android:id="@+id/genre_item_pfl_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/img_home_test7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_aspectRatio="100%"
+                app:layout_widthPercent="100%" />
+
+        </android.support.percent.PercentFrameLayout>
+
+        <TextView
+            android:padding="@dimen/fab_padding"
+            android:textColor="?attr/colorPrimary"
+            android:gravity="center"
+            android:text="@{genre.title}"
+            android:textSize="18dp"
+            android:layout_below="@id/genre_item_pfl_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</layout>

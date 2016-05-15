@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_save"
+        android:title="Save"
+        android:orderInCategory="3"
+        android:icon="@android:drawable/ic_menu_save"
+        android:visible="false"
+        app:showAsAction="always"
+        />
+
+    <item android:id="@+id/action_filter"
+        android:orderInCategory="2"
+        android:title="Filter"
+        android:icon="@drawable/ic_filter"
+        android:visible="false"
+        app:showAsAction="always">
+
+        <menu>
+            <group android:id="@+id/filter_group"
+                android:checkableBehavior="single">
+                <item
+                    android:title="Filter"
+                    android:checkable="false">
+                </item>
+                <item android:id="@+id/filter_by_song_name"
+                    android:checked="true"
+                    android:title="By Song Name"/>
+                <item android:id="@+id/filter_by_singer_name"
+                    android:title="By Singer Name"/>
+            </group>
+        </menu>
+
+    </item>
+
+    <item android:id="@+id/action_search"
+        android:orderInCategory="1"
+        android:title="Search"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="com.beast.bkara.util.SongSearchView" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>

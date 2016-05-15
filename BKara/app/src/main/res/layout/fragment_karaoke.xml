@@ -1,0 +1,175 @@
+<layout xmlns:hedgehog="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="song"
+            type="com.beast.bkara.model.Song" />
+        <variable
+            name="karaokeFrag"
+            type="com.beast.bkara.fragments.KaraokeFragment" />
+        <import type="me.tatarka.bindingcollectionadapter.LayoutManagers" />
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.beast.bkara.fragments.KaraokeFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/frag_karaoke_youtubeViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ToggleButton
+                    android:enabled="false"
+                    android:id="@+id/frag_karaoke_btnRecord"
+                    android:textOff=""
+                    android:textOn=""
+                    android:background="@drawable/toggle_record"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_width="@dimen/box_sm"
+                    android:layout_height="@dimen/box_sm" />
+
+            </FrameLayout>
+
+            <ToggleButton
+                android:layout_marginTop="@dimen/fab_margin"
+                android:textOn=""
+                android:textOff=""
+                android:drawableTop="@drawable/toggle_karaoke_info"
+                android:background="?attr/colorPrimary"
+                android:id="@+id/frag_karaoke_btnExpand"
+                android:layout_below="@id/frag_karaoke_youtubeViewer"
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+
+                android:id="@+id/frag_karaoke_erl_songInfo"
+                android:layout_below="@id/frag_karaoke_btnExpand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ael_expanded="true"
+                app:ael_duration="500"
+                app:ael_interpolator="bounce"
+                app:ael_orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:id="@+id/frag_karaoke_ll_title"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="20dp"
+                        android:hint="Em cua ngay hom qua"
+                        android:text="@{song.title}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:gravity="right"
+                        android:hint="2048 view"
+                        app:setView="@{song.view}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/frag_karaoke_textViewArtist"
+                    android:layout_below="@id/frag_karaoke_ll_title"
+                    app:setSinger="@{song.singer}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/frag_karaoke_ll_addtoplaylist"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/frag_karaoke_textViewArtist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/frag_karaoke_btnAdd"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/frag_karaoke_btnAddToPlaylist"
+                        android:layout_marginLeft="4dp"
+                        android:gravity="center_vertical"
+                        android:text="Add to playlist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+                    <com.beast.bkara.util.RatingBarView
+                        android:id="@+id/frag_karaoke_ratingbar"
+                        android:gravity="right|center_vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:setRating="@{song.rating}"
+                        hedgehog:starEmpty="@drawable/ic_star_empty"
+                        hedgehog:starFill="@drawable/ic_star_full"
+                        hedgehog:starHalf="@drawable/ic_star_half"
+                        hedgehog:starCount="5"
+                        hedgehog:clickable="false"
+                        hedgehog:starImageSize="25dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_below="@id/frag_karaoke_ll_addtoplaylist"
+                    android:background="?attr/colorPrimary"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+            <TextView
+                android:layout_below="@id/frag_karaoke_erl_songInfo"
+                android:id="@+id/frag_karaoke_textViewTopRecords"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20dp"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:text="Top Records"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/frag_karaoke_rv_recordList"-->
+                <!--app:items="@{recordVm.recordList}"-->
+                <!--app:itemView="@{recordVm.recordView}"-->
+                <!--app:layoutManager="@{LayoutManagers.linear()}"-->
+                <!--app:adapter="@{karaokeFrag.mFactory}"-->
+                <!--android:layout_marginTop="@dimen/fab_margin"-->
+                <!--android:layout_below="@id/frag_karaoke_textViewTopRecords"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+
+            <FrameLayout
+                android:id="@+id/frag_karaoke_frame_recordlist"
+                android:layout_below="@id/frag_karaoke_textViewTopRecords"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>
+

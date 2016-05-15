@@ -1,0 +1,166 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.beast.bkara.fragments.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/frag_home_prl_sliderHot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/frag_home_progressbar_hot"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                            <com.daimajia.slider.library.SliderLayout
+                                android:id="@+id/sliderHot"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                app:layout_aspectRatio="178%"
+                                app:layout_widthPercent="100%" />
+
+<!--                <ImageView
+                    android:id="@+id/sliderHotTemp"
+                    android:src="@drawable/img_home_test"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_aspectRatio="178%"
+                    app:layout_widthPercent="100%" />-->
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/frag_home_ll_new"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:divider="@drawable/linearlayout_divider"
+                android:showDividers="middle"
+                android:layout_below="@+id/frag_home_prl_sliderHot"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.percent.PercentRelativeLayout
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/frag_home_progressbar_new0"
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                <ImageView
+                    android:onClick="fragHomeNewSongClick"
+                    android:id="@+id/frag_home_image_new0"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_aspectRatio="100%"
+                    app:layout_widthPercent="100%" />
+
+                </android.support.percent.PercentRelativeLayout>
+
+                <LinearLayout
+                    android:divider="@drawable/linearlayout_divider"
+                    android:showDividers="middle"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <android.support.percent.PercentRelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp">
+
+                        <ProgressBar
+                            android:id="@+id/frag_home_progressbar_new1"
+                            android:layout_centerInParent="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:onClick="fragHomeNewSongClick"
+                            android:id="@+id/frag_home_image_new1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_aspectRatio="100%"
+                            app:layout_widthPercent="100%" />
+
+                    </android.support.percent.PercentRelativeLayout>
+
+                    <android.support.percent.PercentRelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp">
+
+                        <ProgressBar
+                            android:id="@+id/frag_home_progressbar_new2"
+                            android:layout_centerInParent="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:onClick="fragHomeNewSongClick"
+                            android:id="@+id/frag_home_image_new2"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_aspectRatio="100%"
+                            app:layout_widthPercent="100%" />
+
+                    </android.support.percent.PercentRelativeLayout>
+
+                    <android.support.percent.PercentRelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp">
+
+                        <ProgressBar
+                            android:id="@+id/frag_home_progressbar_new3"
+                            android:layout_centerInParent="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:onClick="fragHomeNewSongClick"
+                            android:id="@+id/frag_home_image_new3"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_aspectRatio="100%"
+                            app:layout_widthPercent="100%" />
+
+                    </android.support.percent.PercentRelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_below="@+id/frag_home_ll_new"
+                android:src="@drawable/img_home_ad"
+                android:adjustViewBounds="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</FrameLayout>

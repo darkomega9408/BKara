@@ -1,0 +1,44 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.beast.bkara.fragments.RecordsFragment">
+    <data>
+        <variable
+            name="recordVm"
+            type="com.beast.bkara.viewmodel.RecordViewModel" />
+        <variable
+            name="recordsFrag"
+            type="com.beast.bkara.fragments.RecordsFragment" />
+        <import type="me.tatarka.bindingcollectionadapter.LayoutManagers" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/frag_records_textview_pleaselogin"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textColor="?attr/colorPrimary"
+            android:text="Please login to use this function"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/frag_records_progressBarWaiting"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/frag_records_rv_recordList"
+            app:items="@{recordVm.recordList}"
+            app:itemView="@{recordVm.recordView}"
+            app:layoutManager="@{LayoutManagers.linear()}"
+            app:adapter="@{recordsFrag.mFactory}"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+</layout>
